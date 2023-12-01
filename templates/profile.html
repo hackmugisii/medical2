@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Medical Assistant
+        </title>
+    </head>
+    <body>
+        <h1>User profile</h1>
+        
+        <form method='post' actin='{% url "profile" %}'>
+            {% csrf_token %}
+            {{ profform }}
+            <button type='submit'>Update</button>
+        </form>
+
+        {% for profile in profile_view %}
+        <p>{{ profile.name}} at: {{profile.age}} in: {{profile.county}}</p>
+        {% endfor %}
+    </body>
+<html>

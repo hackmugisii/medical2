@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Medical Assistant
+        </title>
+    </head>
+    <body>
+        <h1>Welcome Medical Assitant</h1>
+        <form method='post' actin='{% url "login" %}'>
+            {% csrf_token %}
+            <input type='text' name='username'required>
+            <input type='password' name='password'required>
+            <button type='submit'>login</button>
+        </form>
+        
+        <h1>Interact with Medical Assitant</h1>
+        <form method='post' actin='{% url "register" %}'>
+            {% csrf_token %}
+            {{registerform}}
+            <button type='submit'>Register</button>
+        </form>
+
+    </body>
+<html>

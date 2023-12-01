@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Medical Assistant
+        </title>
+    </head>
+    <body>
+        <h1>Medical Assitant</h1>
+        <form method='post' actin='{% url "chatroom" %}'>
+            {% csrf_token %}
+            {{ form }}
+            <button type='submit'>Chat</button>
+        </form>
+
+        {% for chat in chat_history %}
+        <p>{{ chat.message}} at: {{chat.time}}</p>
+        {% empty %}
+        <p>Hey you, need assistance? </p>
+        {% endfor %}
+    </body>
+<html>
